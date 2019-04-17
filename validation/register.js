@@ -1,4 +1,3 @@
-// import isEmpty from './is-empty'; // Why isn't this working?
 const isEmpty = require('./is-empty');
 const Validator = require('validator');
 

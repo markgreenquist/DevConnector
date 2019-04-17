@@ -1,4 +1,3 @@
-// import isEmpty from './is-empty'; // Why isn't this working?
 const isEmpty = require('./is-empty');
 const Validator = require('validator');
 
@@ -22,6 +21,6 @@ module.exports = function validateLoginInput(data) {
 
   return {
     errors,
-    isValid: isEmpty(errors) // Should be isValid: isEmpty(errors)
+    isValid: isEmpty(errors)
   };
 };
