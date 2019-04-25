@@ -6,6 +6,7 @@ import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import SelectListGroup from '../common/SelectListGroup';
 import InputGroup from '../common/InputGroup';
+import CameraInputGroup from '../common/CameraInputGroup';
 import { createProfile } from '../../actions/profileActions';
 
 class CreateProfile extends Component {
@@ -13,6 +14,7 @@ class CreateProfile extends Component {
     super(props);
     this.state = {
       displaySocialInputs: false,
+      displayCameraInputs: false,
       handle: '',
       company: '',
       website: '',
@@ -66,7 +68,17 @@ class CreateProfile extends Component {
   }
 
   render() {
-    const { errors, displaySocialInputs } = this.state;
+    const { errors, displaySocialInputs, displayCameraInputs } = this.state;
+
+    let cameraInputs;
+    if (displayCameraInputs) {
+      // cameraInputs = <h2>Let's take a photo!</h2>;
+      cameraInputs = (
+        <div>
+          <CameraInputGroup />
+        </div>
+      );
+    }
 
     let socialInputs;
 
@@ -238,6 +250,23 @@ class CreateProfile extends Component {
                   value="Submit"
                   className="btn btn-info btn-block mt-4"
                 />
+                <br />
+                <hr />
+                <div className="mb-3">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      this.setState(prevState => ({
+                        displayCameraInputs: !prevState.displayCameraInputs
+                      }));
+                    }}
+                    className="btn btn-light"
+                  >
+                    Take A Photo
+                  </button>
+                </div>
+                {cameraInputs}
+                <input type="file" name="image" accepts="image/*" capture />
               </form>
             </div>
           </div>
