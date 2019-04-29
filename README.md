@@ -20,3 +20,12 @@ Going forward, additional features that we like to add are as follows:
    This would allow a logged in user to work in the app (i.e., add/delete posts, add/delete comments and add/delete likes)
    while the mobile device is off-line and then, once a connection to the web is re-established, the app would be updated 
    to reflect the user's actions that have been performed while the mobile device was off-line.
+
+
+App Info
+Original Author: Brad Traversy, Traversy Media
+
+Modified By:  Mark Greenquist
+
+License
+This project is licensed under the MIT License
